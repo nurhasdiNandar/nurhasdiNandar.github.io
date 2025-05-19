@@ -68,59 +68,63 @@
        </p>
       </div>
      </section>
+     <!-- skills -->
      <section>
       <h2 class="uppercase font-bold text-lg tracking-widest mb-2 border-b border-white border-opacity-50 pb-1">
         Skills
       </h2>
       <ul class="space-y-4">
-      <li>
+      <!-- <li>
         <div class="flex items-center space-x-2 mb-1">
           <i class="fas fa-network-wired text-white"></i>
           <span class="text-sm font-medium text-white">Network Management</span>
         </div>
         <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="75%" style="width: 0%"></div>
+          <div class="progress-bar bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="75%" style="width: 0%"></div>
         </div>
-      </li>
+      </li> -->
       <li>
-        <div class="flex items-center space-x-2 mb-1">
-          <i class="fab fa-linux text-white"></i>
-          <span class="text-sm font-medium text-white">Linux Operating System</span>
-        </div>
-        <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="75%" style="width: 0%"></div>
-        </div>
-      </li>
-      <li>
-        <div class="flex items-center space-x-2 mb-1">
-          <i class="fab fa-windows text-white"></i>
-          <span class="text-sm font-medium text-white">Windows Operating System</span>
-        </div>
-        <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="80%" style="width: 0%"></div>
-        </div>
-      </li>
-      <li>
-        <div class="flex items-center space-x-2 mb-1">
-          <i class="fas fa-network-wired text-white"></i>
-          <span class="text-sm font-medium text-white">Mikrotik</span>
-        </div>
-        <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="80%" style="width: 0%"></div>
-        </div>
-      </li>
-      <li>
-        <div class="flex items-center space-x-2 mb-1">
-          <i class="fas fa-shield-alt text-white"></i>
-          <span class="text-sm font-medium text-white">Fortinet</span>
-        </div>
-        <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="70%" style="width: 0%"></div>
-        </div>
-      </li>
+            <div class="flex items-center space-x-2 mb-1">
+                <i class="fab fa-linux text-white"></i>
+                <span class="text-sm font-medium text-white">Linux Operating System</span>
+            </div>
+            <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
+                <div class="h-2.5 rounded-full transition-all duration-1000" data-width="75%" style="width: 0%;"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="flex items-center space-x-2 mb-1">
+                <i class="fab fa-windows text-white"></i>
+                <span class="text-sm font-medium text-white">Windows Operating System</span>
+            </div>
+            <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
+                <div class="h-2.5 rounded-full transition-all duration-1000" data-width="80%" style="width: 0%;"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="flex items-center space-x-2 mb-1">
+                <i class="fas fa-network-wired text-white"></i>
+                <span class="text-sm font-medium text-white">Mikrotik</span>
+            </div>
+            <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
+                <div class="h-2.5 rounded-full transition-all duration-1000" data-width="85%" style="width: 0%;"></div>
+            </div>
+        </li>
+
+        <li>
+            <div class="flex items-center space-x-2 mb-1">
+                <i class="fas fa-shield-alt text-white"></i>
+                <span class="text-sm font-medium text-white">Fortinet</span>
+            </div>
+            <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
+                <div class="h-2.5 rounded-full transition-all duration-1000" data-width="75%" style="width: 0%;"></div>
+            </div>
+        </li>
     </ul>
     </section>
-
+    <!-- end skill -->
     </div>
    </aside>
    <!-- Right Content -->
@@ -304,15 +308,25 @@
   </div>
  </body>
  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const bars = document.querySelectorAll('[data-width]');
-      bars.forEach(bar => {
-        const targetWidth = bar.getAttribute('data-width');
-        setTimeout(() => {
-          bar.style.width = targetWidth;
-        }, 300); // sedikit delay agar animasinya halus
-      });
-    });
+        window.onload = function() {
+        const progressBars = document.querySelectorAll('div[data-width]');
+        
+        progressBars.forEach(progressBar => {
+            const percentage = parseInt(progressBar.getAttribute('data-width'));
+            progressBar.style.width = percentage + '%';
+
+            // Menggunakan gradasi biru dari gelap ke terang
+            if (percentage <= 20) {
+                progressBar.style.background = "linear-gradient(to right, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.6) 100%)"; // Biru gelap ke biru terang
+            } else if (percentage <= 50) {
+                progressBar.style.background = "linear-gradient(to right, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0.8) 100%)"; // Biru lebih terang
+            } else if (percentage <= 80) {
+                progressBar.style.background = "linear-gradient(to right, rgba(59, 130, 246, 0.7) 0%, rgba(59, 130, 246, 1) 100%)"; // Biru terang
+            } else {
+                progressBar.style.background = "linear-gradient(to right, rgba(59, 130, 246, 0.9) 0%, rgba(59, 130, 246, 1) 100%)"; // Biru solid terang
+            }
+        });
+    }
 </script>
 
 </html>
