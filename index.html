@@ -79,7 +79,7 @@
           <span class="text-sm font-medium text-white">Network Management</span>
         </div>
         <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
+          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="75%" style="width: 0%"></div>
         </div>
       </li>
       <li>
@@ -88,7 +88,7 @@
           <span class="text-sm font-medium text-white">Linux Operating System</span>
         </div>
         <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
+          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="75%" style="width: 0%"></div>
         </div>
       </li>
       <li>
@@ -97,7 +97,7 @@
           <span class="text-sm font-medium text-white">Windows Operating System</span>
         </div>
         <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
+          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="80%" style="width: 0%"></div>
         </div>
       </li>
       <li>
@@ -106,7 +106,7 @@
           <span class="text-sm font-medium text-white">Mikrotik</span>
         </div>
         <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
+          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="80%" style="width: 0%"></div>
         </div>
       </li>
       <li>
@@ -115,7 +115,7 @@
           <span class="text-sm font-medium text-white">Fortinet</span>
         </div>
         <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 70%"></div>
+          <div class="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" data-width="70%" style="width: 0%"></div>
         </div>
       </li>
     </ul>
@@ -303,4 +303,16 @@
    </main>
   </div>
  </body>
+ <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const bars = document.querySelectorAll('[data-width]');
+      bars.forEach(bar => {
+        const targetWidth = bar.getAttribute('data-width');
+        setTimeout(() => {
+          bar.style.width = targetWidth;
+        }, 300); // sedikit delay agar animasinya halus
+      });
+    });
+</script>
+
 </html>
