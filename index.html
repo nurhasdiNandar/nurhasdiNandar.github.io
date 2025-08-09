@@ -8,7 +8,6 @@
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
  </head>
  <body class="bg-white text-gray-800">
@@ -75,7 +74,7 @@
               <span class="text-sm font-medium text-white">Linux Operating System</span>
           </div>
           <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-              <div class="h-2.5 rounded-full transition-all duration-1000" data-width="75%" style="width: 0%;"></div>
+              <div class="h-2.5 rounded-full transition-all duration-1000 bg-blue-500" data-width="75%" style="width: 0%;"></div>
           </div>
            <div class="flex justify-between text-white text-[10px] mt-1">
                 <span>Beginner</span>
@@ -89,7 +88,7 @@
                 <span class="text-sm font-medium text-white">Windows Operating System</span>
             </div>
             <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-                <div class="h-2.5 rounded-full transition-all duration-1000" data-width="80%" style="width: 0%;"></div>
+                <div class="h-2.5 rounded-full transition-all duration-1000 bg-blue-500" data-width="80%" style="width: 0%;"></div>
             </div>
             <div class="flex justify-between text-white text-[10px] mt-1">
                 <span>Beginner</span>
@@ -125,7 +124,7 @@
                 <span class="text-sm font-medium text-white">Fortinet</span>
             </div>
             <div class="w-full bg-white bg-opacity-20 rounded-full h-2.5">
-                <div class="h-2.5 rounded-full transition-all duration-1000" data-width="75%" style="width: 0%;"></div>
+                <div class="h-2.5 rounded-full transition-all duration-1000 bg-blue-500" data-width="75%" style="width: 0%;"></div>
             </div>
             <div class="flex justify-between text-white text-[10px] mt-1">
                 <span>Beginner</span>
@@ -357,24 +356,12 @@
   </div>
  </body>
  <script>
-        window.onload = function() {
-        const progressBars = document.querySelectorAll('div[data-width]');
-        
-        progressBars.forEach(progressBar => {
-            const percentage = parseInt(progressBar.getAttribute('data-width'));
-            progressBar.style.width = percentage + '%';
-
-            // Menggunakan gradasi biru dari gelap ke terang
-            if (percentage <= 20) {
-                progressBar.style.background = "linear-gradient(to right, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.6) 100%)"; // Biru gelap ke biru terang
-            } else if (percentage <= 50) {
-                progressBar.style.background = "linear-gradient(to right, rgba(59, 130, 246, 0.5) 0%, rgba(59, 130, 246, 0.8) 100%)"; // Biru lebih terang
-            } else if (percentage <= 80) {
-                progressBar.style.background = "linear-gradient(to right, rgba(59, 130, 246, 0.7) 0%, rgba(59, 130, 246, 1) 100%)"; // Biru terang
-            } else {
-                progressBar.style.background = "linear-gradient(to right, rgba(59, 130, 246, 0.9) 0%, rgba(59, 130, 246, 1) 100%)"; // Biru solid terang
-            }
-        });
+    window.onload = function() {
+      const progressBars = document.querySelectorAll('div[data-width]');
+      progressBars.forEach(progressBar => {
+        const percentage = progressBar.getAttribute('data-width');
+        progressBar.style.width = percentage;
+      });
     }
 </script>
 
